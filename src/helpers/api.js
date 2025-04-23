@@ -1,7 +1,6 @@
 const axios = require('axios')
 //define backend API endpoint (url/link)
-const backEnd = 'https://vocab-server-qwac.onrender.com/api/vocab/'
-// const backEnd = 'http://localhost:3000/api/vocab/'
+const backEnd = 'https://vocab-server-qwac.onrender.com/vocab/'
 //declare functions to call API from backend
 export const ViewALLVocabs = async () =>{
     try {
