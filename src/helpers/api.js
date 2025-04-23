@@ -1,6 +1,7 @@
 const axios = require('axios')
 //define backend API endpoint (url/link)
-const backEnd = 'https://vocab-server-qwac.onrender.com/vocab/'
+const backEnd = 'https://vocab-server-qwac.onrender.com/api/vocab/'
+// const backEnd = 'http://localhost:3000/api/vocab/'
 //declare functions to call API from backend
 export const ViewALLVocabs = async () =>{
     try {
@@ -46,13 +47,4 @@ export const EditVocab = async (id, word) =>{
         }catch (error){
             console.error('Error edit vocab:', error)
         }
-}
-
-export const DeleteAll = async () => {
-    try {
-        const response = await axios.delete(backEnd)
-        return response.data
-    } catch (error){
-        console.error("Error delete:", error)
-    }
 }

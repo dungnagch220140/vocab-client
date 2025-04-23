@@ -3,13 +3,6 @@
     <!-- Vocabulary List Section -->
     <div class="vocab-list-container">
         <h2 class="list-title">Vocabulary List</h2>
-        <tbody>
-                <a
-                class="ui red button action-btn"
-                @click.prevent="onDeleteAll()"
-                >Delete All</a
-                >
-            </tbody>
         <table class="vocab-table">
         <thead>
             <tr>
@@ -73,18 +66,6 @@ export default {
                 const updateWords = this.words.filter((word) => word._id !== id)
                 this.words = updateWords;
                 this.flash("Remove word succeed!")
-            }
-        },
-        async onDeleteAll() {
-            const deleteConfirm = window.confirm("Are you sure you want to delete all words?");
-            if (deleteConfirm) {
-                try {
-                    await DeleteAll(); 
-                    this.words = []; 
-                    this.flash("All words deleted successfully!");
-                } catch (error) {
-                    console.error("Error deleting all words:", error);
-                }
             }
         },
     }
