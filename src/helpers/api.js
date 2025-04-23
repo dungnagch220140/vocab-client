@@ -47,3 +47,12 @@ export const EditVocab = async (id, word) =>{
             console.error('Error edit vocab:', error)
         }
 }
+
+export const DeleteAll = async () => {
+    try {
+        const response = await axios.delete(backEnd)
+        return response.data
+    } catch (error){
+        console.error("Error delete:", error)
+    }
+}
