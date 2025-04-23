@@ -45,7 +45,7 @@
         createOrUpdate: async function () {
         const response = await AddNewVocab(this.word);
         alert("Word created successfully!");
-        this.$router.push("/");
+        this.$router.push("/words"); // Redirect to the words list page after creation
       }
     }
   };

@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import {  ViewALLVocabs, DeleteVocab, DeleteAll } from '@/helpers/api.js';
+import {  ViewALLVocabs, DeleteVocab } from '@/helpers/api.js';
 
 export default {
     name: 'Words',

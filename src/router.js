@@ -16,6 +16,11 @@ export default new Router({
             component: Words
         },
         {
+            path: '/words',
+            name: 'words',
+            component: Words
+        },
+        {
             path: '/new',
             name: 'New',
             component: New
