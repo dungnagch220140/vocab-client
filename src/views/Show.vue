@@ -1,27 +1,38 @@
 <template>
     <div>
-        <h1>Show Word</h1>
-            <div class="ui labeled input fluid">
-                <div class = "ui label">
-                    <i class="united kingdom flag"></i>
-                    English
-                </div>
-                <input type="text":value="word.english" readonly/>
-            </div>
-            <br/>
-            <div class="ui labeled input fluid">
-                <div class = "ui label">
-                    <i class="de flag"></i>
-                    German
-                </div>
-                <input type="text":value="word.german" readonly/>
-            </div>
-            <br/>
-            <div>
-                <router-link :to="{ name: 'Edit', params: { id:this.$route.params.id}}"
-                    class="ui yellow button">Edit</router-link>
-            </div>
+    <!-- Word details section -->
+    <div class="word-details-container">
+    <h2 class="section-title">Word Details</h2>
+
+    <!-- English field -->
+    <div class="ui labeled input fluid">
+        <div class="ui label">
+        <i class="united kingdom flag"></i> English
+        </div>
+        <input type="text" :value="word.english" readonly />
     </div>
+    <br />
+
+    <!-- German field -->
+    <div class="ui labeled input fluid">
+        <div class="ui label">
+        <i class="de flag"></i> German
+        </div>
+        <input type="text" :value="word.german" readonly />
+    </div>
+    <br />
+
+    <!-- Modify button -->
+    <div class="modify-button-container">
+        <router-link
+        :to="{ name: 'Edit', params: { id: $route.params.id } }"
+        class="ui button yellow"
+        >
+        Modify
+        </router-link>
+    </div>
+    </div>
+</div>
 </template>
 
 <script>
@@ -44,6 +55,53 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+/* Styling for word details container */
+.word-details-container {
+max-width: 500px;
+margin: 50px auto;
+background-color: #f9f9f9;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.section-title {
+font-size: 22px;
+font-weight: bold;
+color: #333;
+margin-bottom: 20px;
+}
+
+/* Label and input field styling */
+.ui.labeled.input {
+width: 100%;
+margin-bottom: 15px;
+}
+
+.ui.label {
+background-color: #007bff;
+color: #fff;
+}
+
+input[readonly] {
+background-color: #f1f1f1;
+color: #333;
+}
+
+/* Modify button container */
+.modify-button-container {
+text-align: center;
+}
+
+.ui.button.yellow {
+background-color: #f0ad4e;
+color: white;
+font-weight: bold;
+padding: 10px 20px;
+}
+
+.ui.button.yellow:hover {
+background-color: #ec971f;
+}
 </style>
